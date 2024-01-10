@@ -27,6 +27,13 @@ app.get("/status", (req,res) => {
   res.send("status ok")
 })
 
+app.post("/register", (req,res) => {
+  console.log(req.body)
+  console.log(req.body.user)
+  console.log(req.body.pwd)
+  res.send("status ok")
+})
+
 const start = async () => {
   try {
     app.listen(port, () =>
