@@ -31,7 +31,7 @@ app.post("/register", (req,res) => {
   console.log(req.body)
   console.log(req.body.user)
   console.log(req.body.pwd)
-  res.send("status ok")
+  res.status(200).json({msg:`${req.body.user} is registered`})
 })
 
 const start = async () => {
