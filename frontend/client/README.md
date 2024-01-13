@@ -28,3 +28,11 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
+## things i did
+* set v-model for input in register page to email n password 
+
+
+#Things i learn new
+there is a watch function in the script tag refer register.vue component
