@@ -11,6 +11,9 @@
   type="password"
   name="password"
   placeholder="password"/>
+  <br>
+  <br>
+  <button> register </button>
 </div>
 </template>
 
