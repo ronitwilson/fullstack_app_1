@@ -15,11 +15,12 @@
   placeholder="password"/>
   <br>
   <br>
-  <button> Register </button>
+  <button @click="register"> Register </button>
 </div>
 </template>
 
 <script>
+import AuthenticationService from '@/services/AuthenticationService'
 export default {
   name: 'Register',
   data () {
@@ -29,9 +30,16 @@ export default {
       password: 'test_pwd'
     }
   },
-  watch: {
-    password (value) {
-      console.log('password has changed ', value)
+  // watch: {
+  //   password (value) {
+  //     // console.log('password has changed ', value)
+  //   }
+  // },
+  methods: {
+    async register () {
+      console.log('register method is called', this.email, this.password)
+      const response = await AuthenticationService.register({email: this.email, password: this.password})
+      console.log('the respose is ', response)
     }
   }
 }
