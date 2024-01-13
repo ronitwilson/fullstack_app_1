@@ -1,5 +1,17 @@
 <template>
-  <h1> Hello status</h1>
+  <div>
+  <h1> Register</h1>
+
+  <input
+  type="email"
+  name="email"
+  placeholder="email"/>
+  <br>
+  <input
+  type="password"
+  name="password"
+  placeholder="password"/>
+</div>
 </template>
 
 <script>
