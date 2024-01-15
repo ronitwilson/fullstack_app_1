@@ -39,7 +39,7 @@ export default {
     async register () {
       console.log('register method is called', this.email, this.password)
       const response = await AuthenticationService.register({email: this.email, password: this.password})
-      console.log('the respose is ', response)
+      console.log('the respose is ', response.data)
     }
   }
 }

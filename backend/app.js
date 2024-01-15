@@ -29,9 +29,9 @@ app.get("/status", (req,res) => {
 
 app.post("/register", (req,res) => {
   console.log(req.body)
-  console.log(req.body.user)
-  console.log(req.body.pwd)
-  res.status(200).json({msg:`${req.body.user} is registered`})
+  console.log(req.body.email)
+  console.log(req.body.password)
+  res.status(200).json({msg:`${req.body.email} is registered`})
 })
 
 const start = async () => {
