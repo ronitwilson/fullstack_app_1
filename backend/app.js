@@ -6,6 +6,7 @@ const app = express();
 const cors = require('cors')
 const bodyParser  = require('body-parser');
 const morgan = require('morgan');
+const {sequelize} = require('./models')
 
 // const notFoundMiddleware = require('./middleware/not-found');
 // const errorHandlerMiddleware = require('./middleware/error-handler');
@@ -36,6 +37,7 @@ app.post("/register", (req,res) => {
 
 const start = async () => {
   try {
+    await sequelize.sync().then(()=> console.log("sequelize connected"))
     app.listen(port, () =>
       console.log(`Server is listening on port ${port}...`)
     );
