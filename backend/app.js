@@ -10,7 +10,7 @@ const {sequelize} = require('./models')
 
 // const notFoundMiddleware = require('./middleware/not-found');
 // const errorHandlerMiddleware = require('./middleware/error-handler');
-// const route = require('./routes/main')
+const route = require('./routes/main')
 
 // middleware
 // app.use(express.static('./public'));
@@ -18,7 +18,7 @@ const {sequelize} = require('./models')
 app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
-// app.use("/api/v1",route)
+app.use("/",route)
 // app.use(notFoundMiddleware);
 // app.use(errorHandlerMiddleware);
 
