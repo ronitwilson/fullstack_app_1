@@ -1,34 +1,18 @@
-// const {badRequestError} = require("../errors")
-// const jwt = require('jsonwebtoken')
+const {User} = require('../models')
 
-// const login = async (req, res) => {
-//     console.log(req.body)
-//     const {username, password} = req.body
-
-//     if(!username || !password) {
-//         const error = new badRequestError("need username password")
-//         throw(error)
-//     }
-//     date = new Date()
-//     id = date.getDate()
-//     console.log(id)
-//     token = jwt.sign({id, username}, process.env.JWTSECRET, {expiresIn:'30d'})
-//     res.status(200).json({msg: "user created", token})
-// }
-
-// const dashboard = async(req, res) => {
-//     console.log("dashboard")
-
-//     const luckyNumber = Math.floor(Math.random() * 100)
-//     console.log("dashboard")
-//     res.status(200).json({msg: `Hello ${req.user.username}`, secret: `here is ur lucky number ${luckyNumber}`})
-// }
-
-const register = (req, res) => {
+const  register = async (req, res) => {
     console.log(req.body)
-    console.log(req.body.email)
-    console.log(req.body.password)
-    res.status(200).json({msg:`${req.body.email} is registered`})
+    // console.log(req.body.email)
+    // console.log(req.body.password)
+    try {
+        const user = await User.create(req.body)
+        console.log("reach cuccess")
+        res.status(200).send(user.toJSON())
+    }
+    catch(err){
+        console.log(err)
+        res.status(400).send("email already registered")
+    }
 }
 
 module.exports = register

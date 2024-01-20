@@ -28,12 +28,6 @@ app.get("/status", (req,res) => {
   res.send("status ok")
 })
 
-app.post("/register", (req,res) => {
-  console.log(req.body)
-  console.log(req.body.email)
-  console.log(req.body.password)
-  res.status(200).json({msg:`${req.body.email} is registered`})
-})
 
 const start = async () => {
   try {
