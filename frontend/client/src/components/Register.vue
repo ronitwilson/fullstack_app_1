@@ -14,6 +14,7 @@
   v-model="password"
   placeholder="password"/>
   <br>
+  <div class="error" v-html="error"></div>
   <br>
   <button @click="register"> Register </button>
 </div>
@@ -27,7 +28,8 @@ export default {
     return {
       msg: 'Register',
       email: 'test_email',
-      password: 'test_pwd'
+      password: 'test_pwd',
+      error: 'test'
     }
   },
   // watch: {
@@ -38,9 +40,20 @@ export default {
   methods: {
     async register () {
       // console.log('register method is called', this.email, this.password)
-      const response = await AuthenticationService.register({email: this.email, password: this.password})
-      console.log('the respose is ', response.data)
+      try {
+        const response = await AuthenticationService.register({email: this.email, password: this.password})
+        console.log('the respose is ', response.data)
+      } catch (err) {
+        console.log('in error case ', err.response.data)
+        this.error = err.response.data.msg
+      }
     }
   }
 }
 </script>
+
+<style scoped>
+.error {
+  color: red;
+}
+</style>
