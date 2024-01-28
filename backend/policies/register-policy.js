@@ -5,7 +5,7 @@ module.exports = {
         // console.log("in middleware !!")
         const schema = Joi.object({
             email: Joi.string().email(),
-            password: Joi.string()
+            password: Joi.string().max(10)
         })
         const {error, value} = schema.validate(req.body)
         if(error) {

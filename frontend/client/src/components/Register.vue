@@ -6,13 +6,13 @@
           <v-toolbar-title>Register</v-toolbar-title>
         </v-toolbar>
         <div class="pl-4 pr-4 pt-2 pb-2">
-          <input
+          <v-text-field
             type="email"
             name="email"
             v-model="email"
             placeholder="email"/>
           <br>
-          <input
+          <v-text-field
             type="password"
             name="password"
             v-model="password"
@@ -37,7 +37,7 @@ export default {
       msg: 'Register',
       email: 'test_email',
       password: 'test_pwd',
-      error: 'test'
+      error: ''
     }
   },
   // watch: {
@@ -51,6 +51,7 @@ export default {
       try {
         const response = await AuthenticationService.register({email: this.email, password: this.password})
         console.log('the respose is ', response.data)
+        this.error = 'reg successfull'
       } catch (err) {
         console.log('in error case ', err.response.data)
         this.error = err.response.data.msg
