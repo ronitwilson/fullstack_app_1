@@ -11,3 +11,12 @@
 * Full stack app playlist -> https://www.youtube.com/watch?v=P4kuSxpjA48&list=PLChiukrA-RMOEB1PRQqB1NITIRsDz9pIN&ab_channel=CodingWithDawid
 * Uber events app with micro services-> https://www.youtube.com/watch?v=8-L8C5DxIiA&list=PLT5Jhb7lgSBMF7JqIV6OZZ9LYPGhqZjfS&ab_channel=IndiTechCoder
 * aws playlist -> https://www.youtube.com/watch?v=SG8blanhAOg&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=12&ab_channel=ExamPro
+
+
+# 12-02-2024
+# After the authentication flow from frontend to backend
+* make login route
+  * use findOne to check if email matchs a db entry
+  * then check if the password is the smae as one provided
+* hint: sequelize({force: true}) -> force drops the table in the db
+* 
