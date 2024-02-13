@@ -14,9 +14,23 @@
 
 
 # 12-02-2024
-# After the authentication flow from frontend to backend
+## After the authentication flow from frontend to backend
 * make login route
   * use findOne to check if email matchs a db entry
   * then check if the password is the smae as one provided
 * hint: sequelize({force: true}) -> force drops the table in the db
 * 
+
+# 13-02-2024
+## use jwt for authentication
+* Have a jwtSignUser(user) -> jwt.sign(user, jwtSecret, expiresIn: 190)
+* login retrun -> res.send({user:UserJson, token: jwtSignUser(UserJson))
+
+## use bcrypt to encrpt the password
+* In User model have a comparePassword method.
+ *  User.prototype.comparePassword = function(password) { return bcrypt.compareAsync(password, this.password)}
+*  have hooks -> beforeCreate, update, save (41 mins)
+*  
+
+## in the client front install vuex
+* have a vuex store.
