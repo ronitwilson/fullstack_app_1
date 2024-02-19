@@ -42,3 +42,12 @@
 * Have a songs model
 *  do a song.create(req.body)  to store the entry to the db 
 *  have a song.findAll({limit: 10})  to fetch songs
+* fetch and show it on UI
+
+## UI to create song
+* After song is created move to the /songs overview page
+* Have a function to verify all the fileds for the song is creater
+  fn() {
+  Object.keys(this.song).every(key => !!this.song[key])
+
+* in the view song page have a button to go to a page to see the details.
