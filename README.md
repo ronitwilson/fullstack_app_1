@@ -34,3 +34,11 @@
 
 ## in the client front install vuex
 * have a vuex store.
+
+# 19-02-2024
+* Have frontend page to show the songs
+* Have the song array load from backend
+* In backend have a SongsController.js -> have a index method to get songs , post method to save songs
+* Have a songs model
+*  do a song.create(req.body)  to store the entry to the db 
+*  have a song.findAll({limit: 10})  to fetch songs
