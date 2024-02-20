@@ -51,3 +51,6 @@
   Object.keys(this.song).every(key => !!this.song[key])
 
 * in the view song page have a button to go to a page to see the details.
+
+## 20-02-24
+* continue from Part 6 15 mins
