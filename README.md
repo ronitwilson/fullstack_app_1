@@ -54,3 +54,8 @@
 
 ## 20-02-24
 * continue from Part 6 15 mins
+
+## 24-02-25
+* update the index in the songsController
+* How to use the $or statement in vue
+ * songs = await Song.findAll({ where: { $or: [ 'title,'artist', 'genre', 'album'].map(key => ({ $like: `%$search%`))}})
